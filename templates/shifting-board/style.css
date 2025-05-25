@@ -1,0 +1,280 @@
+:root {
+    --propic-width: calc(3 * 100vh / 4);
+    --text-width: calc(100vw - (3 * 100vh / 4));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+}
+
+.background-0 {
+    background-image: url('../img/bg-office-1.jpg');
+}
+
+.background-1 {
+    background-image: url('../img/bg-city-1.jpg');
+}
+
+.profile-picture {
+    background-image: url('../img/profile-picture.jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 0px 10px black;
+}
+
+.text {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.text .about {
+    width: inherit;
+}
+
+.text .title,
+.text .about .card,
+.text .contact {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    align-items: center;
+    gap: 10px;
+}
+
+.title h5 {
+    margin-top: calc(50vh - 100px);
+    font-size: 50px;
+}
+
+.title p {
+    font-size: 40px;
+}
+
+.about .card {
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.about .card h5 {
+    font-size: 30px;
+}
+
+.contact {
+    justify-content: center;
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.darker-background {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+.fadein-effect {
+    animation-name: fadein;
+    animation-duration: 1s;
+    opacity: 1;
+}
+
+.fadeout-effect {
+    animation-name: fadeout;
+    animation-duration: 1s;
+    opacity: 0;
+}
+
+@media (orientation: portrait) {
+    .CONTENT {
+        display: block;
+    }
+
+    .CONTENT .void,
+    .CONTENT .profile-picture,
+    .CONTENT .text {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .about .card {
+        padding: 20px;
+        align-items: center;
+    }
+
+    .about .card h5 {
+        align-self: flex-start;
+    }
+
+    .contact {
+        align-items: center;
+    }
+}
+
+@media (orientation: landscape) {
+    .CONTENT {
+        position: fixed;
+        display: grid;
+        grid-template-columns: auto var(--propic-width) auto;
+        grid-template-rows: 100vh;
+        grid-template-areas: "void propic text";
+    }
+
+    .void {
+        grid-column: 0;
+        grid-area: void;
+    }
+
+    .profile-picture {
+        grid-area: propic;
+    }
+
+    .text {
+        grid-area: text;
+        grid-column: var(--text-width);
+    }
+
+    .about .card {
+        padding: 100px;
+    }
+
+    .text .title,
+    .text .about .card,
+    .text .contact {
+        width: var(--text-width);
+    }
+
+    .contact {
+        padding: 0 200px 0 200px;
+    }
+
+    @keyframes text-to-left {
+        from {
+            grid-area: void;
+            width: 0;
+            grid-column: 0;
+            overflow-y: hidden;
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+        to {
+            width: var(--text-width);
+            grid-column: var(--text-width);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+    
+    @keyframes text-to-right {
+        from {
+            grid-area: text;
+            width: 0;
+            grid-column: 0;
+            overflow-y: scroll;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        to {
+            width: var(--text-width);
+            grid-column: var(--text-width);
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+    }
+    
+    .text-to-left-effect {
+        animation-name: text-to-left;
+        animation-duration: 1s;
+        grid-area: void;
+        overflow-y: hidden;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .text-to-right-effect {
+        animation-name: text-to-right;
+        animation-duration: 1s;
+        grid-area: text;
+        overflow-y: scroll;
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+    
+    @keyframes void-to-right {
+        from {
+            grid-area: text;
+            width: var(--text-width);
+            grid-column: var(--text-width);
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+        to {
+            width: 0;
+            grid-column: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+    }
+    
+    @keyframes void-to-left {
+        from {
+            grid-area: void;
+            width: var(--text-width);
+            grid-column: var(--text-width);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        to {
+            width: 0;
+            grid-column: 0;
+            background-color: rgba(0, 0, 0, 0.45);
+        }
+    }
+    
+    .void-to-right-effect {
+        animation-name: void-to-right;
+        animation-duration: 1s;
+        grid-area: text;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .void-to-left-effect {
+        animation-name: void-to-left;
+        animation-duration: 1s;
+        grid-area: void;
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+    
+    .CONTAINER-overflow-y {
+        height: calc(100vh + 10px);
+    }
+}
+

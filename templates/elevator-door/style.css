@@ -1,0 +1,699 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.UNION {
+    background-image: linear-gradient(to right, #6a2371, #aa4193);
+    background-attachment: fixed;
+}
+
+/**********/
+/* HEADER */
+/**********/
+
+.header-lowbg {
+    min-height: 100vh;
+    background-image: url("images/background-header-blur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header {
+    width: inherit;
+    min-height: inherit;
+    display: grid;
+    background-image: url("images/background-header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* NAVIGATIONS */
+
+.header-nav {
+    grid-area: nav;
+    display: flex;
+}
+
+.header-nav * {
+    height: 1em;
+    padding: 20px 10px 10px 10px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.header-nav *:hover {
+    color: #e859c9;
+}
+
+/* NAMA PERUSAHAAN */
+
+.header-nama_perusahaan {
+    grid-area: nama_perusahaan;
+    display: flex;
+}
+
+.header-nama_perusahaan-papan {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header-nama_perusahaan-papan-teks {
+    color: #505050;
+    font-style: italic;
+}
+
+.header-nama_perusahaan-papan-mulai {
+    color: white;
+    text-decoration: none;
+    border: solid 2px white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.header-nama_perusahaan-papan-mulai:hover {
+    background-image: linear-gradient(to right, #6a2371, #aa4193);
+}
+
+@media only screen and (max-width: 1000px) {
+
+    header {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 600px;
+        grid-template-areas: "nav" "nama_perusahaan";
+    }
+
+    .header-nav {
+        justify-content: center;
+        gap: 2vw;
+    }
+
+    .header-nama_perusahaan {
+        align-items: start;
+        justify-content: center;
+        margin-top: 60px;
+    }
+
+    .header-nama_perusahaan-papan {
+        gap: 20px;
+        border-radius: 40px;
+    }
+
+    .header-nama_perusahaan-papan-logo {
+        width: 40vw;
+    }
+
+    .header-nama_perusahaan-papan-teks {
+        font-size: 20px;
+        letter-spacing: 4px;
+    }
+
+    .header-nama_perusahaan-papan-mulai {
+        padding: 8px;
+        font-size: 23px;
+        border-radius: 8px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    header {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "nama_perusahaan nav";
+    }
+
+    .header-nav {
+        justify-content: right;
+    }
+
+    .header-nav * {
+        margin-right: 2vw;
+    }
+
+    .header-nama_perusahaan {
+        align-items: center;
+    }
+
+    .header-nama_perusahaan-papan {
+        min-width: 500px;
+        gap: 30px;
+        border-left: none;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+    }
+
+    .header-nama_perusahaan-papan-logo {
+        width: 400px;
+    }
+
+    .header-nama_perusahaan-papan-teks {
+        font-size: 30px;
+        letter-spacing: 6px;
+    }
+
+    .header-nama_perusahaan-papan-mulai {
+        padding: 10px;
+        font-size: 30px;
+        border-radius: 10px;
+    }
+}
+
+/***********/
+/* SECTION */
+/***********/
+
+section {
+    min-height: 200vh;
+}
+
+/* SECTION TENTANG */
+
+.section-tentang-lowbg {
+    min-height: 100vh;
+    background-image: url("images/background-tentang-blur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-tentang {
+    min-height: inherit;
+    background-image: url("images/background-tentang.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-tentang-gradient {
+    width: inherit;
+    min-height: inherit;
+    background-image: linear-gradient(to left, #6a237177, #aa419377, #ffffff77);
+}
+
+.section-tentang-gradient-h {
+    color: #cc58b3;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.section-tentang-gradient-p {
+    color: #511656;
+    text-shadow: -2px 0px #cc58b3aa;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1000px) {
+    
+    .section-tentang-gradient {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 180px auto;
+        grid-template-areas: "h" "p";
+    }
+
+    .section-tentang-gradient-h {
+        grid-area: h;
+        display: flex;
+        align-items: center;
+        text-shadow: -3px 0 white;
+    }
+
+    .section-tentang-gradient-p {
+        grid-area: p;
+        margin: 50px 20px 50px 20px;
+        padding: 30px;
+        font-size: 26px;
+        letter-spacing: 3px;
+        line-height: 28px;
+        border-radius: 32px;
+    }
+
+    @media only screen and (max-width: 450px) {
+        .section-tentang-gradient-h {
+            margin-left: 25px;
+            font-size: 43px;
+            letter-spacing: 4px;
+        }
+    }
+
+    @media only screen and (min-width: 451px) {
+        .section-tentang-gradient-h {
+            margin-left: 30px;
+            font-size: 50px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    .section-tentang-gradient {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .section-tentang-gradient-h {
+        width: 500px;
+        min-height: 400px;
+        margin-left: 60px;
+        font-size: 60px;
+        letter-spacing: 6px;
+        text-shadow: -4px 0 white;
+    }
+
+    .section-tentang-gradient-p {
+        width: 750px;
+        min-height: 400px;
+        margin: 50px 0 50px 0;
+        padding: 40px;
+        font-size: 32px;
+        letter-spacing: 4px;
+        line-height: 34px;
+        border-right: none;
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/* SECTION BROWSING */
+
+.section-browsing-lowbg {
+    min-height: 100vh;
+    background-image: url("images/background-browsing-blur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-browsing {
+    min-height: inherit;
+    background-image: url("images/background-browsing.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.section-browsing-gradient {
+    width: inherit;
+    min-height: inherit;
+}
+
+.section-browsing-gradient-h {
+    color: #cc58b3;
+    font-size: 60px;
+    font-weight: bold;
+    letter-spacing: 6px;
+    text-align: left;
+    text-shadow: -4px 0 white;
+    box-sizing: border-box;
+}
+
+.section-browsing-gradient-p {
+    color: #511656;
+    text-shadow: -2px 0px #cc58b3aa;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1000px) {
+    
+    .section-browsing-gradient {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px auto;
+        grid-template-areas: "h" "p";
+        background-image: linear-gradient(to left, #6a237177, #aa419377, #ffffff77);
+    }
+
+    .section-browsing-gradient-h {
+        grid-area: h;
+        display: flex;
+        align-items: center;
+        text-shadow: -3px 0 white;
+    }
+
+    .section-browsing-gradient-p {
+        grid-area: p;
+        margin: 50px 20px 50px 20px;
+        padding: 30px;
+        font-size: 26px;
+        letter-spacing: 3px;
+        line-height: 28px;
+        border-radius: 32px;
+    }
+
+    @media only screen and (max-width: 450px) {
+        .section-browsing-gradient-h {
+            margin-left: 25px;
+            font-size: 43px;
+            letter-spacing: 4px;
+        }
+    }
+
+    @media only screen and (min-width: 451px) {
+        .section-browsing-gradient-h {
+            margin-left: 30px;
+            font-size: 50px;
+            letter-spacing: 5px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    .section-browsing-gradient {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        background-image: linear-gradient(to right, #6a237177, #aa419377, #ffffff77);
+    }
+
+    .section-browsing-gradient-h {
+        width: 500px;
+        min-height: 400px;
+        margin-right: 60px;
+        font-size: 60px;
+        letter-spacing: 6px;
+        text-shadow: -4px 0 white;
+        text-align: right;
+    }
+
+    .section-browsing-gradient-p {
+        width: 750px;
+        min-height: 400px;
+        margin: 50px 0 50px 0;
+        padding: 40px;
+        font-size: 32px;
+        letter-spacing: 4px;
+        line-height: 34px;
+        border-left: none;
+        border-top-right-radius: 40px;
+        border-bottom-right-radius: 40px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    }
+}
+
+/**********/
+/* FOOTER */
+/**********/
+
+.footer-lowbg {
+    min-height: 100vh;
+    background-image: url("images/background-footer-blur.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer {
+    min-height: inherit;
+    padding: 50px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-image: url("images/background-footer.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*** FOOTER PRODUK ***/
+
+.footer-produk {
+    padding-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    border-radius: 40px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer-produk-judul {
+    height: 75px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: left;
+    text-indent: 50px;
+    line-height: 75px;
+}
+
+.footer-produk-daftar {
+    margin: 0 30px 0 30px;
+    padding: 30px 0 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    overflow: auto;
+    box-sizing: border-box;
+}
+
+/* FOOTER PRODUK DAFTAR KARTU */
+
+.footer-produk-daftar-kartu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.footer-produk-daftar-kartu:hover {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-produk-daftar-kartu-judul,
+.footer-produk-daftar-kartu-harga {
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.footer-produk-daftar-kartu-judul {
+    flex-direction: column;
+}
+
+.footer-produk-daftar-kartu-sekat {
+    width: 75%;
+    height: 2px;
+    background-color: white;
+}
+
+.footer-produk-daftar-kartu-harga {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .footer-produk {
+        width: 80%;
+        height: 400px;
+    }
+
+    .footer-produk-daftar {
+        height: 325px;
+    }
+
+    .footer-produk-daftar-kartu {
+        width: 250px;
+        height: 188px;
+        gap: 10px;
+    }
+
+    .footer-produk-daftar-kartu-judul {
+        font-size: 35px;
+    }
+
+    .footer-produk-daftar-kartu-harga {
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    .footer-produk {
+        min-width: 900px;
+        max-width: 1000px;
+        width: 90vw;
+        height: 500px;
+    }
+
+    .footer-produk-daftar {
+        height: 425px;
+    }
+
+    .footer-produk-daftar-kartu {
+        width: 400px;
+        height: 300px;
+        gap: 30px;
+    }
+
+    .footer-produk-daftar-kartu-judul {
+        font-size: 45px;
+    }
+
+    .footer-produk-daftar-kartu-harga {
+        font-size: 35px;
+    }
+}
+
+/*** FOOTER KONTAK ***/
+
+.footer-kontak {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    border-radius: 40px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* FOOTER KONTAK PESAN */
+
+.footer-kontak-pesan {
+    margin: 40px;
+}
+
+.footer-kontak-pesan-judul {
+    grid-area: judul;
+    color: white;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+
+.footer-kontak-pesan-telp,
+.footer-kontak-pesan-email {
+    padding: 5px 15px 5px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    border-radius: 10px;
+}
+
+/* FOOTER KONTAK ALAMAT */
+
+.footer-kontak-alamat {
+    margin: 0 40px 40px 40px;
+    display: flex;
+    gap: 20px
+}
+
+.footer-kontak-alamat-teks {
+    color: #6a2371;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1px white;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1000px) {
+
+    .footer-kontak {
+        width: 80%;
+        min-height: 400px;
+    }
+
+    .footer-kontak-pesan {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        gap: 20px;
+    }
+
+    .footer-kontak-pesan-telp,
+    .footer-kontak-pesan-email {
+        font-size: 20px;
+    }
+
+    .footer-kontak-alamat {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-kontak-alamat-teks {
+        padding: 20px;
+        font-size: 18px;
+        border-radius: 12px;
+    }
+
+    .footer-kontak-alamat-gmap_statis {
+        max-width: 500px;
+        width: 90%;
+        min-height: 200px;
+        max-height: 400px;
+        height: 50vw;
+        border-radius: 15px;
+    }
+}
+
+@media only screen and (min-width: 1001px) {
+
+    .footer-kontak {
+        min-width: 900px;
+        max-width: 1000px;
+        width: 90vw;
+        min-height: 500px;
+    }
+
+    .footer-kontak-pesan {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "judul telp" "judul email";
+        row-gap: 20px;
+    }
+
+    .footer-kontak-pesan-telp,
+    .footer-kontak-pesan-email {
+        font-size: 25px;
+    }
+
+    .footer-kontak-pesan-telp {
+        grid-area: telp;
+    }
+    
+    .footer-kontak-pesan-email {
+        grid-area: email;
+    }
+
+    .footer-kontak-alamat {
+        justify-content: space-between;
+    }
+
+    .footer-kontak-alamat-teks {
+        width: 400px;
+        padding: 30px;
+        font-size: 22px;
+        border-radius: 20px;
+    }
+
+    .footer-kontak-alamat-gmap_statis {
+        width: 500px;
+        height: 400px;
+        border-radius: 20px;
+    }
+}
