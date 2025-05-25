@@ -1,2 +1,2 @@
 @echo off
-g++ -o pack main.cpp -std=c++11
+g++ -o bin/pack main.cpp -std=c++11
