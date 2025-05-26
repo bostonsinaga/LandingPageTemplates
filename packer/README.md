@@ -1,1 +1,0 @@
-Currently this source code only targeted for Windows with *MSYS2 mingw-w64-x86_64*.
