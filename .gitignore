@@ -1,8 +1,0 @@
-customs/yours/*
-dist/*
-packer/bin/*
-res/yours/*
-!customs/yours/README.md
-!dist/README.md
-!packer/bin/README.md
-!res/yours/README.md
